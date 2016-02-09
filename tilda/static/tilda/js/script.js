@@ -1,6 +1,12 @@
 var converter = new showdown.Converter();
 var html      = converter.makeHtml($(".note").text());
 
+
+$("button").click(function() {
+	//window.alert("click");
+	$.post( "/todo/all/");
+});
+
 // show markdown when editing
 $(".note").click(function() {
 
