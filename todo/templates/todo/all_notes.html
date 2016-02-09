@@ -1,5 +1,36 @@
-<h1>Hasdo wrld</h1>
+<html>
+   {% load staticfiles %}
 
+   
+   <link href="{% static "tilda/css/style.css" %}" rel="stylesheet" type="text/css" />
+
+<div class="wrapper">
+
+<main class="blog">
 {% for item in all_items %}
-    <h2>{{ item.note }}</h2>
+    <article style="border-top:5px solid {{item.color.color_code}};">
+    
+    <!--raw onClick="this.contentEditable='true';">{{ item.note }}</raw-->
+    <div class="note">
+    	<textarea class="markdown hidden">
+	    	 {{ item.note }} 
+	    </textarea>
+	    <div class="rendered">
+	    	{{ item.note }}
+	    </div>
+    </div>
+    
+    </article>
+
+
 {% endfor %}
+</main>
+</div>
+
+<script src="https://cdn.rawgit.com/showdownjs/showdown/1.3.0/dist/showdown.min.js"></script>
+<script src="{% static "tilda/js/jquery-1.11.3.js" %}"></script>
+<script src="{% static "tilda/js/script.js" %}"></script>
+
+
+
+</html>

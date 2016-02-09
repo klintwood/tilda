@@ -1,0 +1,399 @@
+html,
+body,
+dir,
+div,
+span,
+p,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: #EEE;
+}
+
+.hidden {
+    display: none;
+}
+
+textarea {
+    width: 100%;
+    height: 300px;
+    border: none;
+    background: none;
+    resize: none;
+}
+
+category {
+    color: #aaa;
+    font-size: 12px
+}
+
+main,
+article,
+header,
+section,
+footer {
+    display: block;
+}
+
+body > header {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+article {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #FFF;
+    padding: 30px;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    transition: 0.15s ease-in;
+}
+
+a:hover,
+a:focus {
+    color: #FFA319;
+    /* COLOR */
+    text-decoration: none;
+    transition: 0.01s;
+}
+
+p > a {
+    color: #FFA319;
+    /* COLOR */
+}
+
+span {
+    line-height: 1em;
+}
+
+.wrapper {
+    width: 980px;
+    margin: 0 auto;
+    padding-top: 6em;
+}
+
+body > header {
+    z-index: 2;
+    position: fixed;
+    height: 4em;
+    transition-duration: 0.25s;
+    width: 100%;
+    text-align: center;
+    background: #FFA319;
+    /* COLOR */
+    /*border-bottom: 2px solid #888888;*/
+}
+
+.top-menu {
+    display: inline-block;
+    position: relative;
+}
+
+nav {
+    height: 4em;
+    padding-left: 1em;
+    display: inline-block;
+    vertical-align: top;
+    transition-duration: 0.25s;
+}
+
+.logo {
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+    transition-duration: 0.25s;
+}
+
+.verticalMiddle {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    transition-duration: 0.25s;
+}
+
+.navigation {
+    list-style: none;
+}
+
+.navigation li {
+    list-style: none;
+    display: inline-block;
+    padding: 0.5em 2em;
+    transition-duration: 0.25s;
+}
+
+.navigation li {
+    /*border: 1px solid #000000;*/
+    /* background: #49AB47;*/
+    color: #000;
+    transition: 0.25s ease-in;
+    cursor: pointer;
+}
+
+.navigation li:hover,
+.navigation li:focus {
+    color: #FFF;
+    /*    background: #49AB47;*/
+    transition: 0.01s;
+}
+
+
+/*
+.navigation li:hover,
+.navigation li:focus {
+    border: 1px solid #0B3B0B;
+    background: #D0D0D0;
+    color: #770000;
+    transition: 0.01s;
+}*/
+
+.navigation li span {
+    font-size: 1.25em;
+    line-height: 1.25em;
+}
+
+.navigation .nav-active {
+    /*border: 1px solid #0B3B0B;*/
+    /*background: #49AB47;*/
+    color: #fff;
+}
+
+.inline-login {
+    display: none;
+    position: absolute;
+    top: 4em;
+    right: 0;
+    background: #cccccc;
+    border: 2px solid #bbbbbb;
+    padding: 0.5em;
+    transition-duration: 0.25s;
+}
+
+.inline-login .input-user,
+.inline-login .input-password {
+    padding: 0 0 0.25em 0;
+}
+
+.inline-login .input-user input,
+.inline-login .input-password input {
+    margin: 0 0 0 0.5em;
+}
+
+.inline-login .input-submit {
+    float: right;
+}
+
+main {
+    padding-left: 2em;
+    padding-bottom: 1.5em;
+}
+
+.boundToTop {
+    height: 2em;
+    transition-duration: 0.5s;
+}
+
+.boundToTop nav {
+    padding-left: 0;
+    height: 2em;
+    transition-duration: 0.5s;
+}
+
+.boundToTop .logo {
+    width: 2em;
+    height: 2em;
+    transition-duration: 0.5s;
+}
+
+.boundToTop .navigation {
+    height: 2em;
+    transition-duration: 0.5s;
+}
+
+.boundToTop .navigation li {
+    padding: 0.25em 2em;
+    height: 2em;
+    transition-duration: 0.5s;
+}
+
+.boundToTop .inline-login {
+    transition-duration: 0.5s;
+    top: 2em;
+}
+
+body > footer {
+    position: relative;
+    height: 5em;
+    width: 100%;
+    overflow: hidden;
+}
+
+.bottom-menu {
+    position: absolute;
+    background: #aaaaaa;
+    border-top: 2px solid #888888;
+    height: 5em;
+    width: 100%;
+    bottom: -2.5em;
+    transition-duration: 1s;
+}
+
+.footer-content {
+    position: relative;
+    bottom: -1em;
+    transition-duration: 0.25s;
+}
+
+.footer-content > ul {
+    width: 980px;
+    margin: 0 auto;
+    display: flex;
+    list-style: none;
+}
+
+.footer-content > ul > li {
+    list-style: none;
+    padding: 0 3em;
+    flex: 1;
+    text-align: center;
+}
+
+.bottomVisible {
+    bottom: 0em;
+    transition-duration: 0.5s;
+}
+
+.blog article {
+    margin: 0 0 2em 0;
+    /*background: #F0F0F0;*/
+}
+
+.blog header img {
+    float: left;
+    width: 3em;
+    height: 3em;
+    margin-right: 1em;
+}
+
+.blog header h1 {
+    font-size: 2em;
+}
+
+.blog header h1 .fa-link {
+    margin-left: 0.5em;
+    font-size: 0.5em;
+}
+
+.blog header time {
+    margin-top: 0.5em;
+    font-style: italic;
+    font-size: 1em;
+    color: #AAAAAA;
+}
+
+.blog .content {
+    padding: 0.5em;
+}
+
+.blog .comment-count {
+    padding-left: 0.25em;
+}
+
+.blog footer {
+    height: 30px;
+    z-index: 1;
+}
+
+.blog footer .comment-viewer {
+    padding-left: 0.5em;
+    float: left;
+}
+
+.blog footer .shariff>ul {
+    display: block;
+    width: 100px;
+    float: right;
+}
+
+.shariff .shariff-button {
+    min-width: 30px !important;
+    max-width: 30px !important;
+}
+
+.shariff a {
+    background: 0 !important;
+    color: #666666 !important;
+}
+
+.shariff .twitter a:hover,
+.shariff .twitter a:focus {
+    color: #55acee !important;
+}
+
+.shariff .facebook a:hover,
+.shariff.facebook a:focus {
+    color: #3b5998 !important;
+}
+
+.shariff .googleplus a:hover,
+.shariff .googleplus a:focus {
+    color: #d34836 !important;
+}
+
+.shariff .share_text {
+    display: none !important;
+}
+
+.blog-compose-comment {
+    padding: 2em 0;
+}
+
+.blog-compose-comment .input-user,
+.blog-compose-comment .input-comment {
+    padding: 0 0 0.25em 0;
+}
+
+.blog-compose-comment .input-comment textarea {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    height: 5em;
+    min-height: 5em;
+    max-height: 20em;
+}
+
+.blog-compose-comment .input-submit input {
+    float: right;
+}
+
+.blog-comments header .username {
+    font-weight: bold;
+}
+
+.blog-comments .content {
+    padding: 0.25em 0 1em 0;
+}
+
+.logo {
+    visibility: visible;
+    position: absolute;
+    left: -17.5em;
+}
