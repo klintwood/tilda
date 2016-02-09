@@ -14,7 +14,7 @@
     
     <!--raw onClick="this.contentEditable='true';">{{ item.note }}</raw-->
     <div class="note" id="{{ item.id }}">
-    	<textarea class="markdown hidden">
+    	<textarea autocomplete="off" class="markdown hidden">
 	    	 {{ item.note }} 
 	    </textarea>
 	    <div class="rendered">
