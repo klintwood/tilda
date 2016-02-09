@@ -7,20 +7,25 @@
 <div class="wrapper">
 
 <main class="blog">
-<button>New</button>
+<button id="new">New</button>
 
 {% for item in all_items %}
     <article style="border-right:15px solid {{item.color.color_code}};">
     
-    <!--raw onClick="this.contentEditable='true';">{{ item.note }}</raw-->
-    <div class="note" id="{{ item.id }}">
-    	<textarea autocomplete="off" class="markdown hidden">
-	    	 {{ item.note }} 
-	    </textarea>
-	    <div class="rendered">
-	    	{{ item.note }}
-	    </div>
-    </div>
+      <!--raw onClick="this.contentEditable='true';">{{ item.note }}</raw-->
+      <div class="note" id="{{ item.id }}">
+      	<textarea autocomplete="off" class="markdown hidden">
+  	    	 {{ item.note }} 
+  	    </textarea>
+  	    <div class="rendered">
+  	    	{{ item.note }}
+  	    </div>
+
+        {% for color in colors %}
+           <button class="change_color" style="background-color:{{color.color_code}}"></button> 
+        {% endfor %}
+      </div>
+      
     
     </article>
 

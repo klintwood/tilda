@@ -2,9 +2,17 @@ var converter = new showdown.Converter();
 var html      = converter.makeHtml($(".note").text());
 
 
-$("button").click(function() {
+$("#new").click(function() {
 	//window.alert("click");
 	$.post( "/todo/all/");
+});
+
+$(".change_color").click(function() {
+	//window.alert("click");
+	//$.post( "/todo/all/");
+	console.log($(this).parent());
+	var border = "15px solid " + $(this).css('background-color');
+	$(this).parent().parent().css("border-right", border);
 });
 
 // show markdown when editing
@@ -26,8 +34,8 @@ $(".note").click(function() {
 
 // show rendered html when not editing
 $(".note").on('blur', 'textarea', function() {
-	console.log("blur");
-	console.log($(this));
+	//console.log("blur");
+	//console.log($(this));
 
 
 	//TODO: send new markdown to server
@@ -37,7 +45,7 @@ $(".note").on('blur', 'textarea', function() {
 
 	// render markdown again
 	var ml = converter.makeHtml($(this).val())
-	console.log(ml);
+	//console.log(ml);
 	$(this).parent().children(".rendered").html(ml);
 
 
