@@ -8,6 +8,6 @@ def todo(request):
 
 
 def all_notes(request):
-    all_items = Item.objects.all().order_by('-creation_date')
+    all_items = Item.objects.all().order_by('-last_edit')
     context = {'all_items': all_items}
     return render(request, 'todo/all_notes.html', context)

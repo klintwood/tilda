@@ -9,6 +9,7 @@ class Item(models.Model):
     done_date = models.DateTimeField(null=True, blank=True)
     due_bye = models.DateTimeField(null=True, blank=True)
     creation_date = models.DateTimeField(auto_now_add=True)
+    last_edit = models.DateTimeField(auto_now=True)
     owner = models.ForeignKey(BaseUser, null=True)
     color = models.ForeignKey('Color', null=True, blank=True)
 
