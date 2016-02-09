@@ -8,6 +8,10 @@ $(".note").click(function() {
 	$(this).children(".markdown").removeClass("hidden");
 	$(this).children(".rendered").addClass("hidden");
 
+	$(this).children(".markdown").focus();
+
+
+
 
 	var asd = $(this).children(".markdown");
 
