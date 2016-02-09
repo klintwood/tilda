@@ -27,10 +27,13 @@ $(".note").click(function() {
 // show rendered html when not editing
 $(".note").on('blur', 'textarea', function() {
 	console.log("blur");
-	console.log($(this).val());
+	console.log($(this));
 
 
 	//TODO: send new markdown to server
+	var url = "/todo/" + $(this).parent().attr('id') + "/";
+	$.post( url, {data: $(this).val()});
+
 
 	// render markdown again
 	var ml = converter.makeHtml($(this).val())
