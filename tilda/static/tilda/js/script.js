@@ -18,9 +18,9 @@ $("#new").click(function() {
 });
 
 $(".change_color").click(function() {
-	console.log($(this).parent());
-	var border = "15px solid " + $(this).css('background-color');
-	$(this).parent().parent().css("border-right", border);
+	//var border = "15px solid " + $(this).css('background-color');
+	//$(this).parent().parent().css("border-right", border);
+	$(this).siblings(".marker").css("background-color", $(this).css('background-color'));
 });
 
 // show raw markdown when editing
@@ -38,10 +38,10 @@ $(".note").on('blur', 'textarea', function() {
 
 	// send new markdown to server
 	var id = $(this).parent().attr('id');
-	//if (id) {
-		var url = "/todo/" + id + "/";
-		$.post( url, {data: $(this).val()});
-	//}
+	var url = "/todo/" + id + "/";
+	$.post( url, {data: $(this).val()});
+	
+	//TODO: also send color information
 	
 
 	// render markdown again

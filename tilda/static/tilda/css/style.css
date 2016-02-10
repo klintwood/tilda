@@ -44,6 +44,16 @@ body {
     display: block;
 }
 
+.marker {
+    height: 50px;
+    width: 50px;
+    background-color: pink; 
+    float: right;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: -30px;
+
+}
+
 button.change_color {
     border-radius: 50%;
     height: 30px;
