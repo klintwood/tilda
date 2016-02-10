@@ -10,7 +10,7 @@
 <main class="blog">
 
 {% for item in all_items %}
-    <article style="border-right:0px solid {{item.color.color_code}};">
+    <article style="border-right:15px solid {{item.color}};">
     
       <!--raw onClick="this.contentEditable='true';">{{ item.note }}</raw-->
       <div class="note" id="{{ item.id }}">
@@ -21,11 +21,14 @@
   	    	
   	    </div>
 
-        <div class="marker" style="background-color: {{item.color.color_code}}"></div>
+        <!--div class="marker" style="background-color: {{item.color.color_code}}"></div-->
 
-        {% for color in colors %}
-           <button class="change_color" style="background-color:{{color.color_code}}"></button> 
-        {% endfor %}
+        <button class="change_color" style="background-color:#ff0000"></button> 
+        <button class="change_color" style="background-color:#00ff00"></button> 
+        <button class="change_color" style="background-color:#0000ff"></button> 
+        <button class="change_color" style="background-color:#ffff00"></button> 
+        <button class="change_color" style="background-color:#000000"></button> 
+
       </div>
       
     
