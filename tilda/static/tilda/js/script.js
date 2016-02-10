@@ -22,10 +22,24 @@ $("#new").click(function() {
 $(".change_color").click(function() {
 
 	var border = $(this).css('background-color');
+	console.log($(this));
 	//$(this).parent().parent().parent().css("border-right-color", border);
 	
 	var border = "15px solid " + $(this).css('background-color');
 	$(this).parent().parent().parent().css("border-right", border);
+	
+	// TODO: should be possible to select border-right-color and change only that
+	//$(this).siblings(".marker").css("background-color", $(this).css('background-color'));
+});
+
+$(".no_color").click(function() {
+
+	//var border = $(this).css('background-color');
+	//console.log($(this));
+	//$(this).parent().parent().parent().css("border-right-color", border);
+	
+	//var border = "15px solid " + $(this).css('background-color');
+	$(this).parent().parent().parent().css("border", "");
 	
 	// TODO: should be possible to select border-right-color and change only that
 	//$(this).siblings(".marker").css("background-color", $(this).css('background-color'));
