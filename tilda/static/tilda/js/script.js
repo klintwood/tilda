@@ -7,6 +7,8 @@ $("#new").click(function() {
 	//blog.children().children().css("background-color", "red");
 	//blog.prepend("lol");
 	var asd = blog.children().first().clone(true);
+	// TODO: remove id
+	asd.children(".note").attr("id", "-1");
 	//asd.$(".rendered").css("color", "red");
 	asd.children().children(".rendered").text("");
 	asd.children().children(".markdown").val("");
@@ -35,9 +37,12 @@ $(".note").click(function() {
 $(".note").on('blur', 'textarea', function() {
 
 	// send new markdown to server
-	var url = "/todo/" + $(this).parent().attr('id') + "/";
-	$.post( url, {data: $(this).val()});
-
+	var id = $(this).parent().attr('id');
+	//if (id) {
+		var url = "/todo/" + id + "/";
+		$.post( url, {data: $(this).val()});
+	//}
+	
 
 	// render markdown again
 	var ml = converter.makeHtml($(this).val())
