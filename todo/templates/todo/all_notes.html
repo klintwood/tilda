@@ -5,12 +5,17 @@
    <link href="{% static "tilda/css/style.css" %}" rel="stylesheet" type="text/css" />
 
 <div class="wrapper">
+<button id="new">+</button>
 
 <main class="blog">
-<button id="new">New</button>
 
 {% for item in all_items %}
-    <article style="border-right:15px solid {{item.color.color_code}};">
+    {% if item.color != "" %}
+    <article style="border-right:15px solid {{item.color}};">
+    {% else %}
+    <article>
+
+    {% endif %}
     
       <!--raw onClick="this.contentEditable='true';">{{ item.note }}</raw-->
       <div class="note" id="{{ item.id }}">
@@ -18,12 +23,25 @@
   	    	 {{ item.note }} 
   	    </textarea>
   	    <div class="rendered">
-  	    	{{ item.note }}
+  	    	
   	    </div>
 
-        {% for color in colors %}
-           <button class="change_color" style="background-color:{{color.color_code}}"></button> 
-        {% endfor %}
+        <!--div class="marker" style="background-color: {{item.color.color_code}}"></div-->
+
+        <div class="colors hidden">
+          <button class="change_color" style="background-color:#ff0000"></button> 
+          <button class="change_color" style="background-color:#00ff00"></button> 
+          <button class="change_color" style="background-color:#0000ff"></button> 
+          <button class="change_color" style="background-color:#ffff00"></button> 
+          <button class="change_color" style="background-color:#000000"></button> 
+
+          <button class="no_color" style="background-color:#ffffff">no color</button> 
+
+        </div>
+
+        <button class="edit">edit</button>
+        <button class="close hidden">save</button>
+
       </div>
       
     

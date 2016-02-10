@@ -20,6 +20,6 @@ from . import views
 
 urlpatterns = [
     #url(r'^$', views.todo, name='todo'),
-    url(r'^([0-9]+)\D+$', views.todo, name='todo'),
+    url(r'^(-?[0-9]*)/$', views.todo, name='todo'),
     url(r'^all/', views.all_notes, name='all'),
 ]

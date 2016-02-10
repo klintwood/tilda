@@ -28,6 +28,32 @@ body {
     display: none;
 }
 
+#new {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
+    margin-top: -50px;
+    font-size: 42;
+    background-color: #00cc00; 
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.marker {
+    height: 50px;
+    width: 50px;
+    background-color: pink; 
+    float: right;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: -30px;
+
+}
+
 button.change_color {
     border-radius: 50%;
     height: 30px;
@@ -62,7 +88,8 @@ body > header {
 }
 
 article {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset -4px 0px 4px -4px black;*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     background: #FFF;
     padding: 30px;
 }
