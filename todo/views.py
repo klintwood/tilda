@@ -14,6 +14,7 @@ def todo(request, num):
 		else:
 			note = request.POST.get('note')
 			color= request.POST.get('color')
+			print "color: " + color
 
 			i = Item.objects.get(id=num)
 			i.note = note

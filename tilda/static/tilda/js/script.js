@@ -7,8 +7,10 @@ $("#new").click(function() {
 	//blog.children().children().css("background-color", "red");
 	//blog.prepend("lol");
 	var asd = blog.children().first().clone(true);
+	asd.css("border-right", "");
 	// TODO: remove id
 	asd.children(".note").attr("id", "-1");
+
 	//asd.$(".rendered").css("color", "red");
 	asd.children().children(".rendered").text("");
 	asd.children().children(".markdown").val("");
@@ -20,11 +22,11 @@ $("#new").click(function() {
 $(".change_color").click(function() {
 
 	var border = $(this).css('background-color');
-	$(this).parent().parent().parent().css("border-right-color", border);
-	/*
+	//$(this).parent().parent().parent().css("border-right-color", border);
+	
 	var border = "15px solid " + $(this).css('background-color');
 	$(this).parent().parent().parent().css("border-right", border);
-	*/
+	
 	// TODO: should be possible to select border-right-color and change only that
 	//$(this).siblings(".marker").css("background-color", $(this).css('background-color'));
 });
@@ -116,6 +118,10 @@ $(".close").click(function() {
 	var id = dies.parent().attr('id');
 	var url = "/todo/" + id + "/";
 	var color = dies.parent().parent().css("border-right-color");
+	//console.log(dies.parent().parent().css("border-right-width"));
+	if (dies.parent().parent().css("border-right-width") == "0px") {
+		color = null;
+	}
 	//console.log(color);
 	var data = {"note": dies.val(), "color": color};
 	$.post( url, data);

@@ -11,7 +11,7 @@ class Item(models.Model):
     creation_date = models.DateTimeField(auto_now_add=True)
     last_edit = models.DateTimeField(auto_now=True)
     owner = models.ForeignKey(BaseUser, null=True)
-    color = models.CharField(max_length=30, default='#000000')
+    color = models.CharField(max_length=30, null=True)
     # color = models.ForeignKey('Color', null=True, blank=True) 
     # color could probably just be the color code, instead of another object
     # selection of colors could the later be saved as a list in the user model
