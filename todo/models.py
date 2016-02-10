@@ -1,4 +1,4 @@
-import markdown
+#import markdown
 
 from django.db import models
 from django.contrib.auth.models import User as BaseUser
@@ -16,10 +16,10 @@ class Item(models.Model):
     def __unicode__(self):
         return self.note
 
-    def get_rendered_note(self):
-        return markdown.markdown(self.note)
-    
-    
+ #   def get_rendered_note(self):
+  #      return markdown.markdown(self.note)
+
+
 class Color(models.Model):
     name = models.CharField(max_length=60)
     color_code = models.CharField(max_length=20)
