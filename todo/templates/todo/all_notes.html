@@ -5,9 +5,9 @@
    <link href="{% static "tilda/css/style.css" %}" rel="stylesheet" type="text/css" />
 
 <div class="wrapper">
+<button id="new">+</button>
 
 <main class="blog">
-<button id="new">+</button>
 
 {% for item in all_items %}
     <article style="border-right:15px solid {{item.color.color_code}};">
@@ -18,7 +18,7 @@
   	    	 {{ item.note }} 
   	    </textarea>
   	    <div class="rendered">
-  	    	{{ item.note }}
+  	    	
   	    </div>
 
         {% for color in colors %}

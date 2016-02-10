@@ -1,97 +1,56 @@
 var converter = new showdown.Converter();
 var html      = converter.makeHtml($(".note").text());
+var blog = $(".blog")
 
 
 $("#new").click(function() {
-	//window.alert("click");
-	$.post( "/todo/all/");
+	//blog.children().children().css("background-color", "red");
+	//blog.prepend("lol");
+	var asd = blog.children().first().clone(true);
+	//asd.$(".rendered").css("color", "red");
+	asd.children().children(".rendered").text("");
+	asd.children().children(".markdown").val("");
+	blog.prepend(asd);
+	//asd.focus();
+	//$.post( "/todo/all/");
 });
 
 $(".change_color").click(function() {
-	//window.alert("click");
-	//$.post( "/todo/all/");
 	console.log($(this).parent());
 	var border = "15px solid " + $(this).css('background-color');
 	$(this).parent().parent().css("border-right", border);
 });
 
-// show markdown when editing
+// show raw markdown when editing
 $(".note").click(function() {
 
-	//$(this).children(".rendered").html($(this).children(".markdown").html());
 	$(this).children(".markdown").removeClass("hidden");
 	$(this).children(".rendered").addClass("hidden");
-
 	$(this).children(".markdown").focus();
 
-
-
-
-	var asd = $(this).children(".markdown");
-
-	
+	var asd = $(this).children(".markdown");	
 });
 
 // show rendered html when not editing
 $(".note").on('blur', 'textarea', function() {
-	//console.log("blur");
-	//console.log($(this));
 
-
-	//TODO: send new markdown to server
+	// send new markdown to server
 	var url = "/todo/" + $(this).parent().attr('id') + "/";
 	$.post( url, {data: $(this).val()});
 
 
 	// render markdown again
 	var ml = converter.makeHtml($(this).val())
-	//console.log(ml);
 	$(this).parent().children(".rendered").html(ml);
 
-
-
+	// show rendered markup
 	$(this).addClass("hidden");
 	$(this).parent().children(".rendered").removeClass("hidden");
-	/*
-
-	$(this).children(".markdown").addClass("hidden");
-	$(this).children(".rendered").removeClass("hidden");
-
-	*/
 
 });
 
-/*
-// show rendered html when not editing
-$(".note").blur(function() {
-	console.log("blur");
 
-	//TODO: send new markdown to server
-
-	// render markdown again
-	var ml = converter.makeHtml($(this).children(".markdown").html())
-	$(this).children(".rendered").html(ml);
-
-
-
-	$(this).children(".markdown").addClass("hidden");
-	$(this).children(".rendered").removeClass("hidden");
-
-	
-
-});
-*/
-
-
-/*
-var markdown = $(".markdown");
-var stuff = markdown.siblings(".rendered").html(converter.makeHtml($(this).html()));
-console.log(stuff);
-//$(".rendered").html(converter.makeHtml($(".markdown").html()));
-*/
-
-
-// render markdown to html on page load
+// render markdown initially on page load
 var notes = $(".note");
 
 notes.each(function () {
