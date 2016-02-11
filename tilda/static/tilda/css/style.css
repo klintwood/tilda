@@ -38,12 +38,20 @@ body {
     font-size: 42;
     background-color: #00cc00; 
     color: black;
-    position: absolute;
+    position: fixed;
     right: 50px;
     bottom: 50px;
+
+
+    color:#FFF;
+    font-size:36px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background-color:#F44336;
+    background:#F44336;
+
+
     
 }
-
 
 .marker {
     height: 50px;
@@ -56,6 +64,14 @@ body {
 }
 
 button.change_color {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button.no_color {
     border-radius: 50%;
     height: 30px;
     width: 30px;
