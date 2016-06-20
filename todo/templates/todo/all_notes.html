@@ -2,7 +2,7 @@
    {% load staticfiles %}
 
    
-   <link href="{% static "tilda/css/style.css" %}" rel="stylesheet" type="text/css" />
+   <link href="{% static "tilda/css/light_theme.css" %}" rel="stylesheet" type="text/css" />
 
 <div class="wrapper">
 <button id="new">+</button>
@@ -37,8 +37,7 @@
           <button class="change_color" style="background-color:#ffeb3b"></button> 
           <button class="change_color" style="background-color:#ff9800"></button> 
 
-          <button class="no_color" style="background-color:#eeeeee"></button> 
-
+          <button class="no_color" style="background-color:#eeeeee"></button>
 
         </div>
 
@@ -46,8 +45,7 @@
         <button class="close hidden">Save</button>
 
       </div>
-      
-    
+        
     </article>
 
 
@@ -55,10 +53,9 @@
 </main>
 </div>
 
+<!--import this lib locally-->
 <script src="https://cdn.rawgit.com/showdownjs/showdown/1.3.0/dist/showdown.min.js"></script>
 <script src="{% static "tilda/js/jquery-1.11.3.js" %}"></script>
 <script src="{% static "tilda/js/script.js" %}"></script>
-
-
 
 </html>
